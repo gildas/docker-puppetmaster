@@ -180,4 +180,6 @@ if [ ! "$(docker images | grep 'gildas/puppetserver')" ]; then
 else
   echo "Container images for puppet are already pulled"
 fi
+echo "Configuring the container"
+$NOOP docker RUN curl -sSL http://tinyurl.com/setup-linux-server -o /tmp/setup.sh && bash /tmp/setup.sh
 # }}}
